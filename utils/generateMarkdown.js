@@ -27,7 +27,7 @@ const writeFile = util.promisify(fs.writeREADME)
 //         </div>
 // </body>
 // </html>`;
-const promptQuestions = () =>
+const questions = () =>
 inquirer
   .prompt([
     {
@@ -70,15 +70,41 @@ inquirer
       name: 'questions',
       message: 'questions about future develpment?',
     },
-  ])
-  .then((answers) => {
-    const READMEhtml = createReadme(answers);
+  ]);
+  // TODO: Create a function to generate markdown for README
+function generateMarkdown(data) {
+  return `# ${data.project}
+${data.description}
+##Table of contents:
+* [installation](#installation)
+* [usage](#usage)
+* [contributors](#contributors)
+* [questions](#questions)
+##Intallation:
+to install the dependencies open the terminal and run:
+\`\`\`${data.install}\`\`\`
+##Usage
+${data.usage}
+##Contributors
+${data.contributors}
+##Questions
+Questions for future development: ${data.questions}
+`;
+}
 
-    fs.writeFile('index.html', READMEhtml, (err) =>
-      err ? console.log(err) : console.log('created professional README')
-    );
-  });
-// TODO: Create a function that returns a license badge based on which license is passed in
+questions()
+.then((data) => writeFile('generatedREADME.md', generateMarkdown(data)))
+  .then(() => console.log('completed'))
+  .catch((err) => console.error(err));
+  
+//   .then((answers) => {
+//     const READMEhtml = createReadme(answers);
+
+//     fs.writeFile('index.html', READMEhtml, (err) =>
+//       err ? console.log(err) : console.log('created professional README')
+//     );
+//   });
+// // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 // function renderLicenseBadge(license) {}
 
@@ -88,13 +114,8 @@ inquirer
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+// function renderLicenseSection(license) {}
 
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
 
-`;
-}
 
 module.exports = generateMarkdown;
