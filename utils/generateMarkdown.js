@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const createHTML = ({project, description, instructions, usage, contents, install, contributors, questions}) =>
+const createReadme = ({project, description, instructions, usage, contents, install, contributors, questions}) =>
 `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +25,44 @@ const createHTML = ({project, description, instructions, usage, contents, instal
         </div>
 </body>
 </html>`;
+inquirer
+  .prompt([
+    {
+      type: 'input',
+      name: 'project',
+      message: 'what is the name of your project?',
+    },
+    {
+      type: 'input',
+      name: 'instructions',
+      message: 'what are the instructions for your project',
+    },
+    {
+      type: 'input',
+      name: 'usage',
+      message: 'how is your project used?',
+    },
+    {
+      type: 'input',
+      name: 'contents',
+      message: 'what is the table of contents?',
+    },
+    {
+      type: 'input',
+      name: 'install',
+      message: 'how do you install your project?',
+    },
+    {
+      type: 'input',
+      name: 'contributors',
+      message: 'who contributed to the project?',
+    },
+    {
+      type: 'input',
+      name: 'questions',
+      message: 'questions about future develpment?',
+    },
+  ])
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {}
