@@ -1,12 +1,13 @@
-# f
-f
-
+# README Generator
+This will allow me to generate a README file that can be used in other projects
+### License:
+undefined
 ### Intallation:
 to install the dependencies open the terminal and run:
-f
+npm i, node generateMarkdown.js
 ### Usage:
-f
+it is used to consistently generate professional README files
 ### Contributors:
-f
+Me
 ### Questions:
-Questions for future development: f
+Questions for future development: adding badges
