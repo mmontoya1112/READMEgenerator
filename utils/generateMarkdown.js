@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
-const writeFile = util.promisify(fs.writeREADME)
+const writeFileREADME = util.promisify(fs.writeFile)
 
 // const createReadme = ({project, description, instructions, usage, contents, install, contributors, questions}) =>
 // `<!DOCTYPE html>
@@ -93,7 +93,7 @@ Questions for future development: ${data.questions}
 }
 
 questions()
-.then((data) => writeFile('generatedREADME.md', generateMarkdown(data)))
+.then((data) => writeFileREADME('generatedREADME.md', generateMarkdown(data)))
   .then(() => console.log('completed'))
   .catch((err) => console.error(err));
   
