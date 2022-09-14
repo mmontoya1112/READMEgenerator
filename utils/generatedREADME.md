@@ -1,12 +1,12 @@
-# b
-b
+# f
+f
 
 ### Intallation:
 to install the dependencies open the terminal and run:
-b
+f
 ### Usage:
-b
+f
 ### Contributors:
-b
+f
 ### Questions:
-Questions for future development: b
+Questions for future development: f

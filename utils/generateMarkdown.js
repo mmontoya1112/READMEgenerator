@@ -17,6 +17,13 @@ inquirer
       message: 'describe your project',
     },
     {
+      type: 'list',
+      name: 'licences',
+      message: 'does it have any licenses?',
+      choices: ['Boost', 'Eclipse', 'GNU', 'ISC', 'none'],
+    },
+    
+    {
       type: 'input',
       name: 'instructions',
       message: 'what are the instructions for your project',
@@ -51,7 +58,8 @@ inquirer
 function generateMarkdown(data) {
   return `# ${data.project}
 ${data.description}
-
+### License:
+${data.licenses}
 ### Intallation:
 to install the dependencies open the terminal and run:
 ${data.install}
