@@ -1,16 +1,12 @@
-# README generator
-it generates readme markdown
-##Table of contents:
-* [installation](#installation)
-* [usage](#usage)
-* [contributors](#contributors)
-* [questions](#questions)
-##Intallation:
+# b
+b
+
+### Intallation:
 to install the dependencies open the terminal and run:
-```NA```
-##Usage
-to make readmes
-##Contributors
-NA
-##Questions
-Questions for future development: adding licences
+b
+### Usage:
+b
+### Contributors:
+b
+### Questions:
+Questions for future development: b
